@@ -1,0 +1,26 @@
+web:
+    resource: "@MyAppsWebBundle/Resources/config/routing.yml"
+    prefix:   /
+
+admin:
+    resource: "@MyAppsAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+#api
+api_login_check:
+    path: /api/login_check
+
+api:
+    resource: "@MyAppsApiBundle/Resources/config/routing.yml"
+    prefix:   /api
+
+core:
+    resource: "@MyAppsCoreBundle/Resources/config/routing.yml"
+    prefix:   /core
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+#app:
+#    resource: '@AppBundle/Controller/'
+#    type: annotation
