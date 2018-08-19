@@ -17,14 +17,5 @@ class User extends BaseUser {
         return $this->id;
     }
 
-    /**
-     * @return bool
-     */
-    public function isEnabled()
-    {
-        return $this->enabled;
-    }
-
-
 }
 

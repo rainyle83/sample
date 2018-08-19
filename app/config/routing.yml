@@ -1,22 +1,39 @@
-web:
-    resource: "@MyAppsWebBundle/Resources/config/routing.yml"
-    prefix:   /
-
-admin:
-    resource: "@MyAppsAdminBundle/Resources/config/routing.yml"
+cms:
+    resource: "@CMSBundle/Resources/config/routing.yml"
     prefix:   /admin
+
+api:
+    resource: "@APIBundle/Resources/config/routing.yml"
+    prefix:   /api
+
+core:
+    resource: "@CoreBundle/Resources/config/routing.yml"
+    prefix:   /
 
 #api
 api_login_check:
     path: /api/login_check
 
-api:
-    resource: "@MyAppsApiBundle/Resources/config/routing.yml"
-    prefix:   /api
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
-core:
-    resource: "@MyAppsCoreBundle/Resources/config/routing.yml"
-    prefix:   /core
+
+
+#web:
+#    resource: "@MyAppsWebBundle/Resources/config/routing.yml"
+#    prefix:   /
+#
+#admin:
+#    resource: "@MyAppsAdminBundle/Resources/config/routing.yml"
+#    prefix:   /admin
+
+#api:
+#    resource: "@MyAppsApiBundle/Resources/config/routing.yml"
+#    prefix:   /api
+#
+#myapps_core:
+#    resource: "@MyAppsCoreBundle/Resources/config/routing.yml"
+#    prefix:   /myapps
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"

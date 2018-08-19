@@ -2,9 +2,10 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: "@MyAppsApiBundle/Resources/config/services.yml" }
-    - { resource: "@MyAppsAdminBundle/Resources/config/services.yml" }
-    - { resource: "@MyAppsCoreBundle/Resources/config/services.yml" }
+#    - { resource: "@MyAppsApiBundle/Resources/config/services.yml" }
+    - { resource: "@APIBundle/Resources/config/services.yml" }
+    - { resource: "@CMSBundle/Resources/config/services.yml" }
+    - { resource: "@CoreBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -113,14 +114,7 @@ fos_user:
 #
 #composer require league/oauth2-facebook
 
-
 #jwt auth
-#lexik_jwt_authentication:
-#    secret_key:       '%kernel.project_dir%/var/jwt/private.pem' # required for token creation
-#    public_key:       '%kernel.project_dir%/var/jwt/public.pem'  # required for token verification
-#    pass_phrase:      'happyapi' # required for token creation, usage of an environment variable is recommended
-#    token_ttl:        3600
-
 lexik_jwt_authentication:
     private_key_path: '%jwt_private_key_path%'
     public_key_path:  '%jwt_public_key_path%'

@@ -18,10 +18,10 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
 //            new AppBundle\AppBundle(),
-            new MyApps\WebBundle\MyAppsWebBundle(),
-            new MyApps\CoreBundle\MyAppsCoreBundle(),
-            new MyApps\AdminBundle\MyAppsAdminBundle(),
-            new MyApps\ApiBundle\MyAppsApiBundle(),
+//            new MyApps\WebBundle\MyAppsWebBundle(),
+//            new MyApps\CoreBundle\MyAppsCoreBundle(),
+//            new MyApps\AdminBundle\MyAppsAdminBundle(),
+//            new MyApps\ApiBundle\MyAppsApiBundle(),
 
 //            https://symfony.com/doc/master/bundles/FOSUserBundle/index.html
             new FOS\UserBundle\FOSUserBundle(),
@@ -34,6 +34,9 @@ class AppKernel extends Kernel
 
 //            https://knpuniversity.com/blog/KnpUOAuth2ClientBundle
             new KnpU\OAuth2ClientBundle\KnpUOAuth2ClientBundle(),
+            new pos\CoreBundle\CoreBundle(),
+            new pos\APIBundle\APIBundle(),
+            new pos\CMSBundle\CMSBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
