@@ -1,0 +1,23 @@
+api_homepage:
+    path:     /
+    defaults: { _controller: APIBundle:Default:index }
+
+api_items:
+    path: /items
+    defaults: { _controller: APIBundle:Item:getList }
+    methods:  [GET]
+
+api_items_get:
+    path: /items/get
+    defaults: { _controller: APIBundle:Item:get }
+    methods:  [GET]
+
+api_users_login:
+    path:     /login
+    defaults: { _controller: APIBundle:User:login }
+    methods:  [POST]
+
+api_users_create:
+    path:     /register
+    defaults: { _controller: APIBundle:User:create }
+    methods:  [POST]

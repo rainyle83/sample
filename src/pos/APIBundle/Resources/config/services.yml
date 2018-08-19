@@ -1,0 +1,19 @@
+services:
+#    api.example:
+#        class: pos\APIBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    #this class override jwt_token_authenticator
+    api.jwt_token_authenticator:
+            class: pos\APIBundle\Security\Guard\JWTTokenAuthenticator
+            parent: lexik_jwt_authentication.security.guard.jwt_token_authenticator
+
+    # This class is used for checking API authorization in firewall of the security configuration
+    api.token_authenticator:
+        class: pos\APIBundle\Security\TokenAuthenticator
+        arguments: ['@lexik_jwt_authentication.encoder', '@doctrine.orm.entity_manager']
+
+    #this class for
+    kernel.event_listener.json_request_transformer:
+      class: Qandidate\Common\Symfony\HttpKernel\EventListener\JsonRequestTransformerListener
+      tags:
+        - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest, priority: 100 }
