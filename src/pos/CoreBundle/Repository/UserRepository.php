@@ -12,7 +12,8 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
 {
     const ACCOUNT_TYPE_RETAILER = 'retailer';
 
-    public function _parseRetailerUserProfiles($user, $retailer) {
+    public function _parseRetailerUserProfiles($user) {
+        $retailer = $user->getRetailer();
         return array(
             'id' => $user->getId(),
             'retailer_id' => $retailer ? $retailer->getId() : '',

@@ -86,7 +86,7 @@ class UserController extends BaseController
         }
 
         $token = $this->getToken($user);
-        $userInfo = $userRepository->_parseRetailerUserProfiles($user, $user->getRetailer());
+        $userInfo = $userRepository->_parseRetailerUserProfiles($user);
         $data = array('user' => $userInfo, 'token' => $token);
 
         $dataResponse = API::getData(API::HTTP_OK, null, $data);
